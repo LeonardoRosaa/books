@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
   flutter_svg: ^2.0.4
+  dartz: ^0.10.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +56,8 @@ dev_dependencies:
       ref: master
   build_runner: ^2.3.3
   flutter_gen_runner: ^5.2.0
+  mocktail: ^0.3.0
+  faker: ^2.1.0
 
 flutter:
   uses-material-design: true
