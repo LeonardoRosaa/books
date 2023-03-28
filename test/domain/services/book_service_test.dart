@@ -9,12 +9,12 @@ import '../../common/common.dart';
 import '../../mocks/mocks.dart';
 
 void main() {
-
-  group('Book service', () { 
-
+  group('Book service', () {
     late Faker faker;
 
     late BookGateway bookGateway;
+
+    late LoggerService loggerService;
 
     late BookService bookService;
 
@@ -22,11 +22,14 @@ void main() {
       faker = Faker();
 
       bookGateway = MockBookGateway();
-      bookService = BookServiceImpl(bookGateway: bookGateway);
+      loggerService = MockLoggerService();
+      bookService = BookServiceImpl(
+        bookGateway: bookGateway,
+        loggerService: loggerService,
+      );
     });
 
-    group('find all method', () { 
-
+    group('find all method', () {
       test('found all books', () async {
         final books = BookCommon.booksGenerate(faker);
 
@@ -51,6 +54,12 @@ void main() {
         final exception = Exception();
 
         when(() => bookGateway.findAll()).thenThrow(exception);
+        when(
+          () => loggerService.error(
+            any<String>(),
+            reason: any<dynamic>(named: 'reason'),
+          ),
+        ).thenAnswer((_) {});
 
         final result = await bookService.findAll();
 

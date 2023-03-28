@@ -1,5 +1,6 @@
 import 'package:books/core/exceptions/book_exception.dart';
 import 'package:books/domain/domain.dart';
+import 'package:books/domain/services/logger_service.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class BookService {
@@ -18,9 +19,12 @@ class BookServiceImpl implements BookService {
 
   const BookServiceImpl({ 
     required this.bookGateway,
+    required this.loggerService,
   });
 
   final BookGateway bookGateway;
+
+  final LoggerService loggerService;
 
   @override
   Future<Either<BookException, List<Book>>> findAll() async {
@@ -33,6 +37,7 @@ class BookServiceImpl implements BookService {
 
       return right(books);
     } catch (error) {
+      loggerService.error('Cannot obtain the books stored', reason: error);
       return left(BookException(error));
     }    
   }
