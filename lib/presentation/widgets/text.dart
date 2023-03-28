@@ -1,6 +1,5 @@
 import 'package:books/core/core.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 enum AppTextLevel {
   title3,
@@ -50,10 +49,7 @@ class AppText extends StatelessWidget {
 
     return Text(
       data,
-      style: GoogleFonts.rubik(
-        textStyle: style,
-        color: theme.colorScheme.outline,
-      ),
+      style: style?.copyWith(color: color),
     );
   }
 }

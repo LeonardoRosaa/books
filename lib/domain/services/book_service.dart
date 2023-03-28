@@ -1,6 +1,5 @@
 import 'package:books/core/exceptions/book_exception.dart';
 import 'package:books/domain/domain.dart';
-import 'package:books/domain/services/logger_service.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class BookService {
@@ -14,7 +13,6 @@ abstract class BookService {
   Future<Either<BookException, List<Book>>> findAll();
 }
 
-/// TODO: Add logs
 class BookServiceImpl implements BookService {
 
   const BookServiceImpl({ 
