@@ -1,6 +1,8 @@
 import 'package:books/core/exceptions/book_exception.dart';
+import 'package:books/data/data.dart';
 import 'package:books/domain/domain.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 typedef FindAll = Future<Either<BookException, List<Book>>>;
 
@@ -34,6 +36,14 @@ abstract class BookService {
     } 
   }
 }
+
+final bookServiceProvider = Provider<BookService>(
+  (ref) => BookServiceImpl(
+    bookGateway: ref.read(localBookGatewayProvider),
+    loggerService: LocalLoggerService.withTag('Book Service'),
+  ),
+);
+
 
 class BookServiceImpl extends BookService {
 

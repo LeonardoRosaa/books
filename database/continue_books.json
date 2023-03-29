@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "Think Again",
+        "authors": [
+            "Adam Grant"
+        ],
+        "releasedAt": 1612259403000,
+        "imageUrl": "https://m.media-amazon.com/images/I/41airLB8k5L._SX329_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": 2,
+        "title": "The Pragmatic Programmer",
+        "authors": [
+            "Andrew Hunt"
+        ],
+        "releasedAt": 1568368203000,
+        "imageUrl": "https://m.media-amazon.com/images/I/51IA4hT6jrL._SX380_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Competing in the Age of AI",
+        "authors": [
+            "Marco Iansiti",
+            "Karim R. Lakhani"
+        ],
+        "releasedAt": 1578390603000,
+        "imageUrl": "https://m.media-amazon.com/images/I/5141PDJWHUL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": 4,
+        "title": "14 Habits of Highly Productive Developers",
+        "authors": [
+            "Zeno Rocha"
+        ],
+        "releasedAt": 1613296203000,
+        "imageUrl": "https://m.media-amazon.com/images/I/41xkBxCL26L._SX289_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Art of Computer Programming: Volume 1: Fundamental Algorithms",
+        "authors": [
+            "Donald E. Knuth"
+        ],
+        "releasedAt": 868269003000,
+        "imageUrl": "https://m.media-amazon.com/images/I/41RlsiG0lHL._SY344_BO1,204,203,200_QL70_ML2_.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability",
+        "authors": [
+            "Steve Krug"
+        ],
+        "releasedAt": 1379930943000,
+        "imageUrl": "https://m.media-amazon.com/images/I/51xzVPaFhfL.jpg"
+    }
+]

@@ -49,6 +49,9 @@ class AppText extends StatelessWidget {
 
     return Text(
       data,
+      softWrap: true,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: style?.copyWith(color: color),
     );
   }

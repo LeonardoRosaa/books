@@ -1,50 +1,51 @@
-import 'package:books/core/core.dart';
-import 'package:books/domain/domain.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NewBooksList extends StatelessWidget {
+class NewBooksList extends ConsumerStatefulWidget {
   const NewBooksList({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final theme = context.theme;
+  ConsumerState<NewBooksList> createState() => _NewBooksListState();
+}
 
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
-          final hasDivisor = index != 9;
+class _NewBooksListState extends ConsumerState<NewBooksList> {
+  @override
+  void initState() {
+    super.initState();
+    _findAllBooks();
+  }
 
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                NewBookItem(
-                  Book(
-                    id: 1,
-                    imageUrl:
-                        'https://fastly.picsum.photos/id/306/200/200.jpg?hmac=_MA2OQbvCf09ghW0BrkSYh9mOhP-xpHqg2c5joDIRFg',
-                    title: 'The Lightning Thief',
-                    releasedAt: DateTime(2005, 06, 28),
-                    authors: const ['Rick Riordann'],
-                  ),
-                ),
-                if (hasDivisor)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10,
-                    ),
-                    child: Container(
-                      height: 1,
-                      color: theme.colorScheme.tertiary,
-                    ),
-                  )
-              ],
-            ),
-          );
-        },
-        childCount: 10,
-      ),
+  Future<void> _findAllBooks() async {
+    await Future.delayed(
+      Duration.zero,
+      () => ref.read(newBooksControllerProvider.notifier).findAll(),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final state = ref.watch(newBooksControllerProvider);
+
+    if (state is LoadingBooksState) {
+      const size = 5;
+      return NewBooksListBuilder(
+        size: size,
+        builder: (_) => const NewBookItemLoading(),
+      );
+    } else if (state is FoundBooksState) {
+      final size = state.books.length;
+
+      return NewBooksListBuilder(
+        size: size,
+        builder: (index) => NewBookItem(
+          state.books[index],
+        ),
+      );
+    } else if (state is EmptyBooksState) {
+      return const SliverMessage('No new books yet');
+    } else {
+      return const SliverMessage('Ops! We have problems to load the new books');
+    }
   }
 }

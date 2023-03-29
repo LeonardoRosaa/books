@@ -23,7 +23,10 @@ class BooksPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                ContinueBooksList(height: constraints.maxHeight / 4.2),
+                ContinueBooksList(
+                  height: constraints.maxHeight / 4.2,
+                  width: constraints.maxWidth,
+                ),
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.only(

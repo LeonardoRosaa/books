@@ -4,6 +4,13 @@ import 'package:books/data/data.dart';
 import 'package:flutter/services.dart';
 
 import 'package:books/domain/domain.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final localBookGatewayProvider = Provider<BookGateway>(
+  (ref) => LocalBookGateway(
+    assetBundle: rootBundle,
+  ),
+);
 
 /// Provide the access to the local books stored.
 class LocalBookGateway implements BookGateway {

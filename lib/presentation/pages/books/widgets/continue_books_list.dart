@@ -1,37 +1,70 @@
-import 'package:books/domain/domain.dart';
 import 'package:books/presentation/presentation.dart';
+import 'package:books/presentation/widgets/continue_book_item_loading.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ContinueBooksList extends StatelessWidget {
+class ContinueBooksList extends ConsumerStatefulWidget {
   const ContinueBooksList({
     super.key,
     required this.height,
+    required this.width,
   });
 
   final double height;
+
+  final double width;
+
+  @override
+  ConsumerState<ContinueBooksList> createState() => _ContinueBooksListState();
+}
+
+class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
+  @override
+  void initState() {
+    super.initState();
+    _findAllBooks();
+  }
+
+  Future<void> _findAllBooks() async {
+    await Future.delayed(
+      Duration.zero,
+      () => ref.read(continueBooksControllerProvider.notifier).findAll(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: height,
-        child: ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          scrollDirection: Axis.horizontal,
-          separatorBuilder: (context, _) {
-            return const AppSpace(10);
+        height: widget.height,
+        child: Builder(
+          builder: (context) {
+            final state = ref.watch(continueBooksControllerProvider);
+
+            if (state is LoadingBooksState) {
+              return ContinueBooksListBuilder(
+                size: 3,
+                width: widget.width,
+                builder: (_) => const ContinueBookItemLoading(),
+              );
+            } else if (state is FoundBooksState) {
+              return ContinueBooksListBuilder(
+                size: state.books.length,
+                width: widget.width,
+                builder: (index) => ContinueBookItem(
+                  state.books[index],
+                ),
+              );
+            } else if (state is EmptyBooksState) {
+              return const Center(child: AppText.paragraph12('Oooh! You do not have started any books'));
+            } else {
+              return const Center(
+                child: AppText.paragraph12(
+                  'Ops! We have problems to load the books',
+                ),
+              );
+            }
           },
-          itemCount: 10,
-          itemBuilder: (context, index) => ContinueBookItem(
-            Book(
-              id: 1,
-              imageUrl:
-                  'https://fastly.picsum.photos/id/306/200/200.jpg?hmac=_MA2OQbvCf09ghW0BrkSYh9mOhP-xpHqg2c5joDIRFg',
-              title: 'The Lightning Thief',
-              releasedAt: DateTime(2005, 06, 28),
-              authors: const ['Rick Riordann'],
-            ),
-          ),
         ),
       ),
     );

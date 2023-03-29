@@ -56,6 +56,7 @@ class NewBookItem extends StatelessWidget {
             ],
           ),
         ),
+        const AppSpace(10),
         const Center(
           child: NewBookNotification(),
         )
