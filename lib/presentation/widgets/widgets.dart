@@ -8,3 +8,5 @@ export 'shimmer.dart';
 export 'shimmer_loading_box_background.dart';
 export 'space.dart';
 export 'text.dart';
+export 'animated_bottom_bar.dart';
+export 'bottom_navigator_bar.dart';

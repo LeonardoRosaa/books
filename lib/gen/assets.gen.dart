@@ -9,6 +9,19 @@
 
 import 'package:flutter/widgets.dart';
 
+class $DatabaseGen {
+  const $DatabaseGen();
+
+  /// File path: database/books.json
+  String get books => 'database/books.json';
+
+  /// File path: database/continue_books.json
+  String get continueBooks => 'database/continue_books.json';
+
+  /// List of all assets
+  List<String> get values => [books, continueBooks];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -18,20 +31,34 @@ class $AssetsIconsGen {
   /// File path: assets/icons/calendar.svg
   String get calendar => 'assets/icons/calendar.svg';
 
+  /// File path: assets/icons/compass.svg
+  String get compass => 'assets/icons/compass.svg';
+
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
   /// File path: assets/icons/play.svg
   String get play => 'assets/icons/play.svg';
 
   /// File path: assets/icons/search.svg
   String get search => 'assets/icons/search.svg';
 
+  /// File path: assets/icons/stack.svg
+  String get stack => 'assets/icons/stack.svg';
+
+  /// File path: assets/icons/stick.svg
+  String get stick => 'assets/icons/stick.svg';
+
   /// List of all assets
-  List<String> get values => [bell, calendar, play, search];
+  List<String> get values =>
+      [bell, calendar, compass, home, play, search, stack, stick];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $DatabaseGen database = $DatabaseGen();
 }
 
 class AssetGenImage {

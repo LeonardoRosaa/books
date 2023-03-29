@@ -9,6 +9,7 @@ class BooksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
     return Scaffold(
+      bottomNavigationBar: const AppBottomNavigationBar(),
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
