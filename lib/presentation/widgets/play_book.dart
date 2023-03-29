@@ -18,7 +18,7 @@ class PlayBook extends StatelessWidget {
       ),
       child: Center(
         child: AppIcon.play(
-          'Play',
+          localizations.play,
           color: Colors.white,
         ),
       ),

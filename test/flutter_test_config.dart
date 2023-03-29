@@ -2,7 +2,10 @@ import 'dart:async';
 import 'package:alchemist/alchemist.dart';
 import 'package:books/presentation/presentation.dart';
 
+import 'common/common.dart';
+
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
+  await prepareLocalization();
   return prepareGoldenTests(testMain);
 }
 

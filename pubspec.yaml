@@ -42,8 +42,10 @@ dependencies:
   cached_network_image: ^3.2.3
   path_provider: ^2.0.14
   gap: ^2.0.1
-  intl: ^0.18.0
+  intl: ^0.17.0
   flutter_riverpod: ^2.3.2
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,7 @@ dev_dependencies:
   meta: ^1.8.0
 
 flutter:
+  generate: true
   uses-material-design: true
 
   assets:

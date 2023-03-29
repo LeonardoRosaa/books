@@ -1,3 +1,4 @@
+import 'package:books/core/core.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,9 +44,9 @@ class _NewBooksListState extends ConsumerState<NewBooksList> {
         ),
       );
     } else if (state is EmptyBooksState) {
-      return const SliverMessage('No new books yet');
+      return SliverMessage(localizations.bookEmptyNewBooks);
     } else {
-      return const SliverMessage('Ops! We have problems to load the new books');
+      return SliverMessage(localizations.bookErrorLoadingNewBooks);
     }
   }
 }

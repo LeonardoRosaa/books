@@ -1,3 +1,4 @@
+import 'package:books/core/core.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:books/presentation/widgets/continue_book_item_loading.dart';
 import 'package:flutter/widgets.dart';
@@ -56,11 +57,15 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
                 ),
               );
             } else if (state is EmptyBooksState) {
-              return const Center(child: AppText.paragraph12('Oooh! You do not have started any books'));
-            } else {
-              return const Center(
+              return Center(
                 child: AppText.paragraph12(
-                  'Ops! We have problems to load the books',
+                  localizations.bookEmptyContinueBooks,
+                ),
+              );
+            } else {
+              return Center(
+                child: AppText.paragraph12(
+                  localizations.bookErrorLoadingContinueBooks,
                 ),
               );
             }

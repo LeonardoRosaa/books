@@ -19,7 +19,7 @@ class BooksPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: AppText.tab(
-                      'Continue',
+                      localizations.bookContinue,
                       color: theme.colorScheme.primary,
                     ),
                   ),
@@ -36,7 +36,7 @@ class BooksPage extends StatelessWidget {
                       bottom: 10,
                     ),
                     child: AppText.tab(
-                      'New',
+                      localizations.bookNew,
                       color: theme.colorScheme.primary,
                     ),
                   ),

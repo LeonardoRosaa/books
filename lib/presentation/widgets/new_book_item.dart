@@ -45,7 +45,7 @@ class NewBookItem extends StatelessWidget {
               const AppSpace(10),
               Row(
                 children: [
-                  AppIcon.calendar('Calendar'),
+                  AppIcon.calendar(localizations.calendar),
                   const AppSpace(10),
                   AppText.paragraph12(
                     book.released,

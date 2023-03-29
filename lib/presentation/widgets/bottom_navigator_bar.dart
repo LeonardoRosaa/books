@@ -1,3 +1,4 @@
+import 'package:books/core/core.dart';
 import 'package:books/gen/assets.gen.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter/widgets.dart' hide BottomNavigationBarItem;
@@ -23,10 +24,22 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
     return AppAnimatedBottomBar(
       selectedIndex: index,
       items: [
-        BottomNavigationBarItem(icon: Assets.icons.home, label: 'Home'),
-        BottomNavigationBarItem(icon: Assets.icons.stack, label: 'Stack'),
-        BottomNavigationBarItem(icon: Assets.icons.compass, label: 'Compass'),
-        BottomNavigationBarItem(icon: Assets.icons.stick, label: 'Stick'),
+        BottomNavigationBarItem(
+          icon: Assets.icons.home,
+          label: localizations.home,
+        ),
+        BottomNavigationBarItem(
+          icon: Assets.icons.stack,
+          label: localizations.stack,
+        ),
+        BottomNavigationBarItem(
+          icon: Assets.icons.compass,
+          label: localizations.compass,
+        ),
+        BottomNavigationBarItem(
+          icon: Assets.icons.stick,
+          label: localizations.stick,
+        ),
       ],
       onChanged: onChanged,
     );

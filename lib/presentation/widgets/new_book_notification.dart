@@ -20,7 +20,7 @@ class NewBookNotification extends StatelessWidget {
       ),
       child: Center(
         child: AppIcon.bell(
-          'Bell',
+          localizations.bell,
           color: theme.colorScheme.primary,
         ),
       ),
