@@ -27,6 +27,7 @@ final lightTheme = ThemeData(
     labelSmall: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w700,
+      letterSpacing: 0,
     ),
     bodyMedium: TextStyle(
       fontSize: 12,
