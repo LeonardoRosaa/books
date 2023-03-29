@@ -18,10 +18,10 @@ class ContinueBooksListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacing.semiLarge.value),
       scrollDirection: Axis.horizontal,
       separatorBuilder: (context, _) {
-        return const AppSpace(10);
+        return const AppSpace.semiMedium();
       },
       itemCount: 4,
       itemBuilder: (context, index) => SizedBox(

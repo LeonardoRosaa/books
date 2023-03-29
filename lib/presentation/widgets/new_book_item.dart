@@ -23,7 +23,7 @@ class NewBookItem extends StatelessWidget {
             height: 100,
           ),
         ),
-        const AppSpace(10),
+        const AppSpace.semiMedium(),
         Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -42,11 +42,11 @@ class NewBookItem extends StatelessWidget {
                   ),
                 ],
               ),
-              const AppSpace(10),
+              const AppSpace.semiMedium(),
               Row(
                 children: [
                   AppIcon.calendar(localizations.calendar),
-                  const AppSpace(10),
+                  const AppSpace.semiMedium(),
                   AppText.paragraph12(
                     book.released,
                     color: theme.colorScheme.secondary,
@@ -56,7 +56,7 @@ class NewBookItem extends StatelessWidget {
             ],
           ),
         ),
-        const AppSpace(10),
+        const AppSpace.semiMedium(),
         const Center(
           child: NewBookNotification(),
         )

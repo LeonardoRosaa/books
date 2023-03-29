@@ -17,7 +17,9 @@ class BooksPage extends StatelessWidget {
               slivers: [
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacing.semiLarge.value,
+                    ),
                     child: AppText.tab(
                       localizations.bookContinue,
                       color: theme.colorScheme.primary,
@@ -30,10 +32,10 @@ class BooksPage extends StatelessWidget {
                 ),
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                      bottom: 10,
+                    padding: EdgeInsets.only(
+                      left: AppSpacing.semiLarge.value,
+                      right: AppSpacing.semiLarge.value,
+                      bottom: AppSpacing.medium.value,
                     ),
                     child: AppText.tab(
                       localizations.bookNew,

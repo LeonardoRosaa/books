@@ -14,7 +14,7 @@ class NewBookItemLoading extends StatelessWidget {
             width: 75,
             borderRadius: BorderRadius.circular(10),
           ),
-          const AppSpace(10),
+          const AppSpace.semiMedium(),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -24,11 +24,11 @@ class NewBookItemLoading extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ShimmerLoadingBoxBackground.textTitle3(),
-                    const AppSpace(2),
+                    const AppSpace.semiSmall(),
                     ShimmerLoadingBoxBackground.textParagraph12(),
                   ],
                 ),
-                const AppSpace(10),
+                const AppSpace.semiMedium(),
                 ShimmerLoadingBoxBackground.textParagraph12(),
               ],
             ),

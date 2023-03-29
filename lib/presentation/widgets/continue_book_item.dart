@@ -34,7 +34,7 @@ class ContinueBookItem extends StatelessWidget {
             ),
           ],
         ),
-        const AppSpace(10),
+        const AppSpace.semiMedium(),
         AppText.title3(
           book.title,
           color: theme.colorScheme.outline,

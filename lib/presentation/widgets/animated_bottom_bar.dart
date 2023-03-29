@@ -26,7 +26,10 @@ class AppAnimatedBottomBar extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: 65,
-          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+          padding: EdgeInsets.symmetric(
+            vertical: AppSpacing.small.value,
+            horizontal: AppSpacing.semiMedium.value,
+          ),
           child: LayoutBuilder(
             builder: (context, constraints) {
               return Row(
@@ -37,8 +40,8 @@ class AppAnimatedBottomBar extends StatelessWidget {
                     onTap: () => onChanged(index),
                     child: _BottomNavigatorItem(
                       item: item,
-                      isSelected: index == selectedIndex, 
-                      maxWidth: constraints.maxWidth / (items.length),                 
+                      isSelected: index == selectedIndex,
+                      maxWidth: constraints.maxWidth / (items.length),
                     ),
                   );
                 }).toList(),
@@ -52,7 +55,6 @@ class AppAnimatedBottomBar extends StatelessWidget {
 }
 
 class _BottomNavigatorItem extends StatelessWidget {
-
   final _duration = const Duration(milliseconds: 150);
 
   final bool isSelected;
@@ -78,12 +80,14 @@ class _BottomNavigatorItem extends StatelessWidget {
       duration: _duration,
       curve: Curves.linear,
       decoration: BoxDecoration(
-        color: isSelected ? theme.colorScheme.background : theme.bottomNavigationBarTheme.backgroundColor,
+        color: isSelected
+            ? theme.colorScheme.background
+            : theme.bottomNavigationBarTheme.backgroundColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
         width: maxWidth,
-        padding: const EdgeInsets.symmetric(horizontal: 5),
+        padding: EdgeInsets.symmetric(horizontal: AppSpacing.small.value),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +102,7 @@ class _BottomNavigatorItem extends StatelessWidget {
                 color: theme.colorScheme.primary,
               ),
             ),
-            const AppSpace(10),
+            const AppSpace.semiMedium(),
             if (isSelected)
               Flexible(
                 child: AppText.paragraph12(
@@ -114,7 +118,6 @@ class _BottomNavigatorItem extends StatelessWidget {
 }
 
 class BottomNavigationBarItem {
-
   const BottomNavigationBarItem({
     required this.icon,
     required this.label,
