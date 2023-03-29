@@ -8,4 +8,12 @@ extension BookExtension on Book {
 
     return format.format(releasedAt);
   }
+
+  String get writers {
+    if (authors.length > 1) {
+      return 'A lot of authors';
+    }
+
+    return authors.first;
+  }
 }

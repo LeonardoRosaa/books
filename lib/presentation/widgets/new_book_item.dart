@@ -1,7 +1,6 @@
 import 'package:books/core/core.dart';
 import 'package:books/domain/domain.dart';
 import 'package:books/presentation/presentation.dart';
-import 'package:books/presentation/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -9,16 +8,6 @@ class NewBookItem extends StatelessWidget {
   const NewBookItem(this.book, {super.key});
 
   final Book book;
-
-  String get authors {
-    final authors = book.authors;
-
-    if (authors.length > 1) {
-      return 'A lot of authors';
-    }
-
-    return authors.first;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +26,7 @@ class NewBookItem extends StatelessWidget {
         const AppSpace(10),
         Expanded(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
@@ -47,7 +37,7 @@ class NewBookItem extends StatelessWidget {
                     color: theme.colorScheme.outline,
                   ),
                   AppText.paragraph12(
-                    authors,
+                    book.writers,
                     color: theme.colorScheme.secondary.withOpacity(0.5),
                   ),
                 ],

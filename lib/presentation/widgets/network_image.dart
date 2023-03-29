@@ -25,7 +25,9 @@ class AppNetworkImage extends StatelessWidget {
       width: width,
       height: height,
       fit: BoxFit.cover,
-      errorWidget: (_, __, dynamic ___) => SizedBox.expand(
+      errorWidget: (_, __, dynamic ___) => SizedBox(
+        width: width,
+        height: height,
         child: ColoredBox(color: theme.colorScheme.primary),
       ),
     );
