@@ -7,12 +7,9 @@ class BookModel extends Book {
     required super.title,
     required super.releasedAt,
     required super.authors,
-    super.startedAt,
   });
 
   factory BookModel.fromMap(Map<String, dynamic> data) {
-    final startedAt = data['startedAt'] as int?;
-
     return BookModel(
       id: data['id'] as int,
       imageUrl: data['imageUrl'] as String,
@@ -21,9 +18,6 @@ class BookModel extends Book {
         data['releasedAt'] as int,
       ),
       authors: List<String>.from(data['authors'] as List),
-      startedAt: startedAt == null
-          ? null
-          : DateTime.fromMillisecondsSinceEpoch(startedAt),
     );
   }
 
@@ -34,7 +28,6 @@ class BookModel extends Book {
       'title': title,
       'releasedAt': releasedAt.millisecondsSinceEpoch,
       'authors': authors,
-      'startedAt': startedAt?.millisecondsSinceEpoch,
     };
   }
 }

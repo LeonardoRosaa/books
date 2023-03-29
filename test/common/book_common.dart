@@ -19,9 +19,6 @@ class BookCommon {
         faker.date.dateTime().year,
       ),
       authors: authors,
-      startedAt: DateTime(
-        faker.date.dateTime().year,
-      ),
     );
   }
 

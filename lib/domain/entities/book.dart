@@ -8,7 +8,6 @@ class Book extends Equatable {
     required this.title,
     required this.releasedAt,
     required this.authors,
-    this.startedAt,
   });
 
   final int id;
@@ -25,9 +24,6 @@ class Book extends Equatable {
   /// The authors that have written the book
   final List<String> authors;
 
-  /// The date that the user started to read the book 
-  final DateTime? startedAt;
-
   @override
-  List<Object?> get props => [id, imageUrl, title, releasedAt, authors, startedAt];
+  List<Object?> get props => [id, imageUrl, title, releasedAt, authors];
 }
