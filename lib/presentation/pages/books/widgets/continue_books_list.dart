@@ -1,17 +1,15 @@
 import 'package:books/core/core.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:books/presentation/widgets/continue_book_item_loading.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ContinueBooksList extends ConsumerStatefulWidget {
   const ContinueBooksList({
     super.key,
-    required this.height,
     required this.width,
   });
-
-  final double height;
 
   final double width;
 
@@ -37,11 +35,11 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: widget.height,
+        height: 150,
         child: Builder(
           builder: (context) {
             final state = ref.watch(continueBooksControllerProvider);
-
+      
             if (state is LoadingBooksState) {
               return ContinueBooksListBuilder(
                 size: 3,
