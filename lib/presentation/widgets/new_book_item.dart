@@ -43,9 +43,15 @@ class NewBookItem extends StatelessWidget {
                 ],
               ),
               const AppSpace(10),
-              AppText.paragraph12(
-                book.released,
-                color: theme.colorScheme.secondary,
+              Row(
+                children: [
+                  AppIcon.calendar('Calendar'),
+                  const AppSpace(10),
+                  AppText.paragraph12(
+                    book.released,
+                    color: theme.colorScheme.secondary,
+                  ),
+                ],
               ),
             ],
           ),
