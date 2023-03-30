@@ -25,6 +25,7 @@ class App extends StatelessWidget {
         ],
         supportedLocales: const [
           Locale('en'),
+          Locale('de'),
         ],
         home: const BooksPage(),
       ),

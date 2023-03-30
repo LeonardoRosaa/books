@@ -1,9 +1,9 @@
 {
     "bookAuthors": "A lot of authors",
     "bookEmptyNewBooks": "No new books yet",
-    "bookErrorLoadingNewBooks": "Ops! We have problems to load the new books",
-    "bookEmptyContinueBooks": "'Oooh! You do not have started any books'",
-    "bookErrorLoadingContinueBooks": "Ops! We have problems to load the books",
+    "bookErrorLoadingNewBooks": "Ops! We have problems loading the new books",
+    "bookEmptyContinueBooks": "Oooh! You do not have started any books",
+    "bookErrorLoadingContinueBooks": "Ops! We have problems loading the books",
     "bookContinue": "Continue",
     "bookNew": "New",
     "bookSearchLabel": "Search for something",

@@ -1,0 +1,19 @@
+{
+    "bookAuthors": "Viele Autoren",
+    "bookEmptyNewBooks": "Noch keine neuen Bücher",
+    "bookErrorLoadingNewBooks": "Ops! We have problems loading the new books",
+    "bookEmptyContinueBooks": "'Oooh! Sie haben keine Bücher begonnen",
+    "bookErrorLoadingContinueBooks": "Ops! Wir haben Probleme beim Laden der Bücher",
+    "bookContinue": "Weitermachen",
+    "bookNew": "Neu",
+    "bookSearchLabel": "Suchen Sie nach etwas",
+    "bookEmptySearch": "Kein Buch für diese Suche",
+    "bell": "Glocke",
+    "calendar": "Kalender",
+    "compass": "Kompass",
+    "home": "Heim",
+    "play": "Spielen",
+    "search": "Suchen",
+    "stack": "Stack",
+    "stick": "Stick"
+}
