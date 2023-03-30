@@ -6,6 +6,8 @@
     "bookErrorLoadingContinueBooks": "Ops! We have problems to load the books",
     "bookContinue": "Continue",
     "bookNew": "New",
+    "bookSearchLabel": "Search for something",
+    "bookEmptySearch": "No book for this search",
     "bell": "Bell",
     "calendar": "Calendar",
     "compass": "Compass",

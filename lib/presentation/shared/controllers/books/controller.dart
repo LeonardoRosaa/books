@@ -1,5 +1,6 @@
 import 'package:books/core/core.dart';
 import 'package:books/domain/domain.dart';
+import 'package:books/presentation/shared/controllers/search_books/controller.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,9 +9,12 @@ part 'state.dart';
 abstract class BooksController extends StateNotifier<BooksState> {
   BooksController.initial({
     required this.bookService,
+    required this.searchBooksController,
   }) : super(
           const InitialBooksState(),
         );
+
+  final SearchBooksController searchBooksController;
 
   final BookService bookService;
 
@@ -29,7 +33,10 @@ abstract class BooksController extends StateNotifier<BooksState> {
 
         return ErrorBooksState(error);
       },
-      FoundBooksState.new,
+      (books) {
+        searchBooksController.setBooks(books);
+        return FoundBooksState(books);
+      },
     );
   }
 }

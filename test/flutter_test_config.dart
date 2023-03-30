@@ -3,8 +3,10 @@ import 'package:alchemist/alchemist.dart';
 import 'package:books/presentation/presentation.dart';
 
 import 'common/common.dart';
+import 'fakers.dart';
 
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
+  Fakers.registerFallback();
   await prepareLocalization();
   return prepareGoldenTests(testMain);
 }

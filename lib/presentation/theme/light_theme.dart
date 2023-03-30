@@ -40,6 +40,7 @@ final lightTheme = ThemeData(
     secondary: Color(0xFF263D36),
     tertiary: Color(0xFFE1EBE8),
     outline: Color(0xFF181A19),
+    outlineVariant: Color(0xFF9AABA6),
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: Color(0xFFF5F9F7),
