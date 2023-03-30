@@ -35,6 +35,7 @@ class _BookSearchOverlayState extends ConsumerState<BookSearchOverlay> {
         ],
       ),
       child: SafeArea(
+        bottom: false,
         child: AnimatedContainer(
           duration: _searchAnimationDuration,
           height: isSearching ? context.dimension.height / 1.6 : 50,
