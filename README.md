@@ -1,16 +1,18 @@
-# books
+# Books
 
-A new Flutter project.
+The Books is a programming-oriented application written in Flutter meant to list some books.
 
-## Getting Started
+> This application is built only for iOS and Android platforms. Even though the Flutter SDK has great support for all platforms including Linux, Windows, MacOS, and Web.
 
-This project is a starting point for a Flutter application.
+This README is designed to guide how this project is structured and some configurations.
 
-A few resources to get you started if this is your first Flutter project:
+  - [Setup](/setup)
+  - [Architecture](/architecture)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Setup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project uses the Flutter SDK and Flutter Version Management tool(a.k.a FVM). If you do not have any idea how to install these tools you can check them out in the [Flutter - Get Started](https://docs.flutter.dev/get-started/install) and [FVM - Getting Started](https://fvm.app/docs/getting_started/overview). 
+
+With these tools installed locally you can run the `fvm flutter pub get` command to fetch the dependencies.
+
+## Architecture
