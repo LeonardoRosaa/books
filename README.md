@@ -1,5 +1,15 @@
 # Books
 
+<p align="center">
+  <img src="./docs/home_dark.png" width="275">
+  <img src="./docs/search_dark.png" width="275">
+</p>
+
+<p align="center">
+  <img src="./docs/home_light.png" width="275">
+  <img src="./docs/search_light.png" width="275">
+</p>
+
 The Books is a programming-oriented application written in Flutter meant to list some books.
 
 > This application is built only for iOS and Android platforms. Even though the Flutter SDK has great support for all platforms including Linux, Windows, MacOS, and Web.

@@ -30,23 +30,19 @@ class AppAnimatedBottomBar extends StatelessWidget {
             vertical: AppSpacing.small.value,
             horizontal: AppSpacing.semiMedium.value,
           ),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: items.map((item) {
-                  final index = items.indexOf(item);
-                  return GestureDetector(
-                    onTap: () => onChanged(index),
-                    child: _BottomNavigatorItem(
-                      item: item,
-                      isSelected: index == selectedIndex,
-                      maxWidth: constraints.maxWidth / (items.length),
-                    ),
-                  );
-                }).toList(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: items.map((item) {
+              final index = items.indexOf(item);
+              return GestureDetector(
+                onTap: () => onChanged(index),
+                child: _BottomNavigatorItem(
+                  item: item,
+                  isSelected: index == selectedIndex,
+                  maxWidth: context.dimension.width / (items.length),
+                ),
               );
-            },
+            }).toList(),
           ),
         ),
       ),
@@ -76,6 +72,9 @@ class _BottomNavigatorItem extends StatelessWidget {
 
     return AnimatedContainer(
       width: isSelected ? maxWidth : maxWidth / 2,
+      constraints: BoxConstraints(
+        maxWidth: isSelected ? 120 : 40,
+      ),
       height: 40,
       duration: _duration,
       curve: Curves.linear,

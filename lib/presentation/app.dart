@@ -31,6 +31,7 @@ class _AppState extends State<App> {
         navigatorKey: navigatorKey,
         theme: lightTheme,
         darkTheme: darkTheme,
+        debugShowCheckedModeBanner: false,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
