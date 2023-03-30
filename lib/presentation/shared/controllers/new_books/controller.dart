@@ -2,11 +2,11 @@ import 'package:books/domain/domain.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final newBooksControllerProvider = StateNotifierProvider<NewBooksController, BooksState>(
+final newBooksControllerProvider =
+    StateNotifierProvider<NewBooksController, BooksState>(
   (ref) => NewBooksController.initial(
     bookService: ref.read(bookServiceProvider),
-        searchBooksController: ref.read(searchBooksControllerProvider.notifier),
-
+    searchBooksController: ref.read(searchBooksControllerProvider.notifier),
   ),
 );
 

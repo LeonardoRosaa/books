@@ -26,9 +26,9 @@ class BookCommon {
     final size = faker.randomGenerator.integer(20, min: 2);
     final List<BookModel> books = [];
 
-    for (int i=0;i<size;i++) {
+    for (int i = 0; i < size; i++) {
       books.add(create(faker));
-    } 
+    }
 
     return books;
   }

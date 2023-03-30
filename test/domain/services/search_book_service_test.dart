@@ -53,7 +53,7 @@ void main() {
 
       test('cannot find any book', () {
         final volumes = searchBookService.search('y', books);
-        
+
         expect(volumes.fold(id, id), const EmptyBookException());
       });
 

@@ -39,7 +39,7 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
         child: Builder(
           builder: (context) {
             final state = ref.watch(continueBooksControllerProvider);
-      
+
             if (state is LoadingBooksState) {
               return ContinueBooksListBuilder(
                 size: 3,

@@ -11,7 +11,6 @@ class BookSearchOverlay extends ConsumerStatefulWidget {
 }
 
 class _BookSearchOverlayState extends ConsumerState<BookSearchOverlay> {
-
   final _searchAnimationDuration = const Duration(milliseconds: 200);
 
   @override

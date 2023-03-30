@@ -8,9 +8,7 @@ import 'package:mocktail/mocktail.dart';
 import '../../mocks/others.dart';
 
 void main() {
-
-  group('Local logger gateway', () { 
-
+  group('Local logger gateway', () {
     late Faker faker;
 
     late Logger logger;
@@ -29,7 +27,7 @@ void main() {
     });
 
     test('logged info', () {
-      when(() => logger.i(message)).thenAnswer((_) { });
+      when(() => logger.i(message)).thenAnswer((_) {});
 
       loggerGateway.info(message);
 
@@ -38,7 +36,7 @@ void main() {
 
     test('logged error', () {
       final exception = Exception();
-      when(() => logger.e(message, exception)).thenAnswer((_) { });
+      when(() => logger.e(message, exception)).thenAnswer((_) {});
 
       loggerGateway.error(message, reason: exception);
 

@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 class Book extends Equatable {
-
   const Book({
     required this.id,
     required this.imageUrl,

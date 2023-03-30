@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 typedef FindAll = Future<Either<BookException, List<Book>>>;
 
 abstract class BookService {
-
   const BookService({
     required this.bookGateway,
     required this.loggerService,
@@ -18,7 +17,7 @@ abstract class BookService {
   final LoggerService loggerService;
 
   /// Find all books.
-  /// 
+  ///
   /// - If the book list is empty returns [EmptyBookException];
   /// - Returns [BookException] if occurs an error to obtain the stored books.
   FindAll findAll() async {
@@ -33,7 +32,7 @@ abstract class BookService {
     } catch (error) {
       loggerService.error('Cannot obtain the books stored', reason: error);
       return left(BookException(error));
-    } 
+    }
   }
 }
 
@@ -44,10 +43,8 @@ final bookServiceProvider = Provider<BookService>(
   ),
 );
 
-
 class BookServiceImpl extends BookService {
-
-  const BookServiceImpl({ 
+  const BookServiceImpl({
     required super.bookGateway,
     required super.loggerService,
   });

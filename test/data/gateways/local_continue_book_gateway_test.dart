@@ -12,7 +12,6 @@ import '../../mocks/mocks.dart';
 
 void main() {
   group('Local continue book gateway', () {
-
     late Faker faker;
 
     late AssetBundle assetBundle;
@@ -27,7 +26,6 @@ void main() {
     });
 
     group('find all method', () {
-
       test('found all books started', () async {
         final books = BookCommon.booksGenerate(faker);
 

@@ -62,22 +62,22 @@ class SearchBookServiceImpl implements SearchBookService {
 
   List<Book> _searchInBooks(String word, List<Book> books) {
     return books.where((book) {
-        final title = removeDiacritics(book.title).toLowerCase();
+      final title = removeDiacritics(book.title).toLowerCase();
 
-        if (title.contains(word)) {
-          return true;
-        }
+      if (title.contains(word)) {
+        return true;
+      }
 
-        final authors = book.authors.where((author) {
-          final writer = removeDiacritics(author).toLowerCase();
+      final authors = book.authors.where((author) {
+        final writer = removeDiacritics(author).toLowerCase();
 
-          return writer.contains(word);
-        });
+        return writer.contains(word);
+      });
 
-        return authors.isNotEmpty;
-      }).toList();
+      return authors.isNotEmpty;
+    }).toList();
   }
-  
+
   @override
   void resetCache() {
     _books = {};

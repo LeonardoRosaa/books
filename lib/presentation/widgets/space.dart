@@ -22,7 +22,7 @@ class AppSpace extends StatelessWidget {
   const AppSpace.semiLarge({
     super.key,
   }) : space = AppSpacing.semiLarge;
-  
+
   final AppSpacing space;
 
   @override
