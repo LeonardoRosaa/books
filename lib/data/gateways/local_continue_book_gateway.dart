@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:books/data/data.dart';
-import 'package:flutter/services.dart';
-
 import 'package:books/domain/domain.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final localContinueBookGatewayProvider = Provider<BookGateway>(
