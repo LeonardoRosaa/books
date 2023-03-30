@@ -31,7 +31,7 @@ class _BookSearchOverlayState extends ConsumerState<BookSearchOverlay> {
             color: theme.colorScheme.tertiary,
             spreadRadius: 10,
             blurRadius: 20,
-            offset: const Offset(0, 0.75),
+            offset: const Offset(0, 0.2),
           ),
         ],
       ),

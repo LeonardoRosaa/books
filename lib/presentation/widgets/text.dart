@@ -36,6 +36,8 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
 
+    final color = this.color ?? theme.colorScheme.outline;
+
     final style = () {
       switch (level) {
         case AppTextLevel.title3:

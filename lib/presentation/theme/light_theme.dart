@@ -1,7 +1,7 @@
 import 'package:books/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
-const color = {
+const _primary = {
   50: Color.fromRGBO(91, 94, 166, .1),
   100: Color.fromRGBO(91, 94, 166, .2),
   200: Color.fromRGBO(91, 94, 166, .3),
@@ -14,11 +14,11 @@ const color = {
   900: Color.fromRGBO(91, 94, 166, 1),
 };
 
-const colorCustom = MaterialColor(0xFF5B5EA6, color);
+const _primarySwatch = MaterialColor(0xFF5B5EA6, _primary);
 
 final lightTheme = ThemeData(
   fontFamily: FontFamily.rubik,
-  primarySwatch: colorCustom,
+  primarySwatch: _primarySwatch,
   textTheme: const TextTheme(
     displaySmall: TextStyle(
       fontSize: 14,

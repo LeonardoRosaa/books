@@ -17,6 +17,9 @@ class SearchField extends StatelessWidget {
       color: theme.colorScheme.background,
       child: TextField(
         onChanged: onChanged,
+        style: theme.textTheme.bodyMedium?.copyWith(
+          color: theme.colorScheme.outline,
+        ),
         decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.zero,

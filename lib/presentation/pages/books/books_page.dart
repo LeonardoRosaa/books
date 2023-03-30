@@ -46,6 +46,7 @@ class _BooksPageState extends ConsumerState<BooksPage> {
     return GestureDetector(
       onTap: _resetSearch,
       child: Scaffold(
+        backgroundColor: theme.colorScheme.background,
         bottomNavigationBar: const AppBottomNavigationBar(),
         body: Padding(
           padding: const EdgeInsets.only(top: 65),

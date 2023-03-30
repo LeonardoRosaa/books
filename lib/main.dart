@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Books Demo',
       navigatorKey: navigatorKey,
       theme: lightTheme,
+      darkTheme: darkTheme,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
