@@ -9,17 +9,26 @@ class PlayBook extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
 
+    final borderRadius = BorderRadius.circular(100);
+
     return Container(
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
+        borderRadius: borderRadius,
         color: theme.colorScheme.primary,
       ),
-      child: Center(
-        child: AppIcon.play(
-          localizations.play,
-          color: Colors.white,
+      child: Material(
+        color: Colors.transparent,
+        child: AppInkWell(
+          overlayColor: theme.colorScheme.outlineVariant,
+          borderRadius: borderRadius,
+          child: Center(
+            child: AppIcon.play(
+              localizations.play,
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
     );

@@ -63,12 +63,15 @@ class _BookSearchOverlayState extends ConsumerState<BookSearchOverlay> {
               ),
               if (state is FoundSearchBooksState)
                 Expanded(
-                  child: ListView.separated(
-                    itemBuilder: (context, index) => SearchBookItem(
-                      state.found[index],
+                  child: Material(
+                    color: theme.colorScheme.background,
+                    child: ListView.separated(
+                      itemBuilder: (context, index) => SearchBookItem(
+                        state.found[index],
+                      ),
+                      separatorBuilder: (context, index) => const BookDivisor(),
+                      itemCount: state.found.length,
                     ),
-                    separatorBuilder: (context, index) => const BookDivisor(),
-                    itemCount: state.found.length,
                   ),
                 ),
               if (state is EmptySearchBooksState)

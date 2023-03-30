@@ -9,19 +9,24 @@ class NewBookNotification extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
 
-    return Container(
-      height: 40,
-      width: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: theme.colorScheme.tertiary,
+    final borderRadius = BorderRadius.circular(AppSpacing.medium.value);
+
+    return AppInkWell(
+      borderRadius: borderRadius,
+      child: Container(
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+          borderRadius: borderRadius,
+          border: Border.all(
+            color: theme.colorScheme.tertiary,
+          ),
         ),
-      ),
-      child: Center(
-        child: AppIcon.bell(
-          localizations.bell,
-          color: theme.colorScheme.primary,
+        child: Center(
+          child: AppIcon.bell(
+            localizations.bell,
+            color: theme.colorScheme.primary,
+          ),
         ),
       ),
     );

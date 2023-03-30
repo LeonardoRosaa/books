@@ -4,6 +4,7 @@ export 'bottom_navigator_bar.dart';
 export 'continue_book_item.dart';
 export 'continue_books_list_builder.dart';
 export 'icon.dart';
+export 'ink_well.dart';
 export 'network_image.dart';
 export 'new_book_item.dart';
 export 'new_book_item_loading.dart';
