@@ -1,27 +1,15 @@
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-// ignore: depend_on_referenced_packages
-import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
-// ignore: depend_on_referenced_packages
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'package:books/domain/domain.dart';
 
-import '../../../common/test_goldens.dart';
-
-const String kTemporaryPath = 'temporaryPath';
-const String kApplicationSupportPath = 'applicationSupportPath';
-const String kDownloadsPath = 'downloadsPath';
-const String kLibraryPath = 'libraryPath';
-const String kApplicationDocumentsPath = 'applicationDocumentsPath';
-const String kExternalCachePath = 'externalCachePath';
-const String kExternalStoragePath = 'externalStoragePath';
+import '../../../common/common.dart';
 
 void main() {
   group('Search book item golden', () {
     setUp(() {
-      PathProviderPlatform.instance = FakePathProviderPlatform();
+      PathProviderCommon.setUp();
     });
 
     testGoldens(
@@ -46,50 +34,4 @@ void main() {
       ),
     );
   });
-}
-
-class FakePathProviderPlatform extends Fake
-    with MockPlatformInterfaceMixin
-    implements PathProviderPlatform {
-  @override
-  Future<String?> getTemporaryPath() async {
-    return kTemporaryPath;
-  }
-
-  @override
-  Future<String?> getApplicationSupportPath() async {
-    return kApplicationSupportPath;
-  }
-
-  @override
-  Future<String?> getLibraryPath() async {
-    return kLibraryPath;
-  }
-
-  @override
-  Future<String?> getApplicationDocumentsPath() async {
-    return kApplicationDocumentsPath;
-  }
-
-  @override
-  Future<String?> getExternalStoragePath() async {
-    return kExternalStoragePath;
-  }
-
-  @override
-  Future<List<String>?> getExternalCachePaths() async {
-    return <String>[kExternalCachePath];
-  }
-
-  @override
-  Future<List<String>?> getExternalStoragePaths({
-    StorageDirectory? type,
-  }) async {
-    return <String>[kExternalStoragePath];
-  }
-
-  @override
-  Future<String?> getDownloadsPath() async {
-    return kDownloadsPath;
-  }
 }
