@@ -28,6 +28,10 @@ abstract class BookService {
         return left(const EmptyBookException());
       }
 
+      books.sort(
+        (a, b) => a.title.compareTo(b.title),
+      );
+
       return right(books);
     } catch (error) {
       loggerService.error('Cannot obtain the books stored', reason: error);

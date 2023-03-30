@@ -28,12 +28,8 @@ class _NewBooksListState extends ConsumerState<NewBooksList> {
   Widget build(BuildContext context) {
     final state = ref.watch(newBooksControllerProvider);
 
-    if (state is LoadingBooksState) {
-      const size = 5;
-      return NewBooksListBuilder(
-        size: size,
-        builder: (_) => const NewBookItemLoading(),
-      );
+    if (state is ErrorBooksState) {
+      return SliverMessage(localizations.bookErrorLoadingNewBooks);
     } else if (state is FoundBooksState) {
       final size = state.books.length;
 
@@ -46,7 +42,11 @@ class _NewBooksListState extends ConsumerState<NewBooksList> {
     } else if (state is EmptyBooksState) {
       return SliverMessage(localizations.bookEmptyNewBooks);
     } else {
-      return SliverMessage(localizations.bookErrorLoadingNewBooks);
+      const size = 5;
+      return NewBooksListBuilder(
+        size: size,
+        builder: (_) => const NewBookItemLoading(),
+      );
     }
   }
 }

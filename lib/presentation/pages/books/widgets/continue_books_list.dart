@@ -40,11 +40,11 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
           builder: (context) {
             final state = ref.watch(continueBooksControllerProvider);
 
-            if (state is LoadingBooksState) {
-              return ContinueBooksListBuilder(
-                size: 3,
-                width: widget.width,
-                builder: (_) => const ContinueBookItemLoading(),
+            if (state is ErrorBooksState) {
+              return Center(
+                child: AppText.paragraph12(
+                  localizations.bookErrorLoadingContinueBooks,
+                ),
               );
             } else if (state is FoundBooksState) {
               return ContinueBooksListBuilder(
@@ -61,10 +61,10 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
                 ),
               );
             } else {
-              return Center(
-                child: AppText.paragraph12(
-                  localizations.bookErrorLoadingContinueBooks,
-                ),
+              return ContinueBooksListBuilder(
+                size: 3,
+                width: widget.width,
+                builder: (_) => const ContinueBookItemLoading(),
               );
             }
           },
