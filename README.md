@@ -61,7 +61,7 @@ The [Alchesmit](https://pub.dev/packages/alchemist) package was installed for cr
 
 You can start reading the [Testing the widget’s appearance in Flutter](https://medium.com/@leonardoorosaa16/testing-the-widgets-appearance-in-flutter-b0ba8b4c32ff) if you would like deep dive into the Golden Tests with *Alchesmit* in Flutter.
 
-## Integration tests
+### Integration tests
 
 Flutter's [integration_test](https://docs.flutter.dev/testing/integration-tests) does a great job but has some features we can't test using the standard API like some *native interactions*. The Books' project uses the [Patrol](https://patrol.leancode.co/getting-started) integration test tool providing an easy way for writing integration tests in Flutter Framework. 
 
