@@ -13,6 +13,7 @@ void main() {
 
     expect($(K.continueBooksList), findsOneWidget);
 
-    await $(K.continueBookItem(bookId)).scrollTo(scrollable: $(K.continueBooksList).$(Scrollable));
+    await $(K.continueBookItem(bookId))
+        .scrollTo(scrollable: $(K.continueBooksList).$(Scrollable));
   });
 }

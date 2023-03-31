@@ -7,7 +7,6 @@ const bookId = int.fromEnvironment('BOOK_ID');
 const bookSearchText = String.fromEnvironment('BOOK_SEARCH_TEXT');
 
 extension PatrolTesterExtension on PatrolTester {
-  
   Future<void> pumpApp() {
     return pumpWidget(const App());
   }

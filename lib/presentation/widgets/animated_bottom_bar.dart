@@ -40,7 +40,7 @@ class AppAnimatedBottomBar extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: items.map((item) {
               final index = items.indexOf(item);
-              
+
               return GestureDetector(
                 onTap: () => onTap(index),
                 child: _BottomNavigatorItem(

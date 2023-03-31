@@ -12,5 +12,6 @@ class Keys {
   static Key newBookItem(int id) => Key('newBookItem$id');
   static Key continueBookItem(int id) => Key('continueBookItem$id');
   static Key searchBookItem(int id) => Key('searchBookItem$id');
-  static Key bottomNavigationBarItem(int id) => Key('bottomNavigationBarItem$id');
+  static Key bottomNavigationBarItem(int id) =>
+      Key('bottomNavigationBarItem$id');
 }

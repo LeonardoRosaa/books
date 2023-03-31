@@ -1,4 +1,4 @@
-all: clean install format analyze test
+all: clean install format analyze testing
 
 clean:
 	@echo "Cleaning"
@@ -16,6 +16,6 @@ analyze:
 	@echo "Analyzing files"
 	fvm flutter analyze
 
-test:
+testing:
 	@echo "Testing"
 	fvm flutter test

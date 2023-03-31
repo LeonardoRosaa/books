@@ -11,6 +11,7 @@ void main() {
 
     await $(K.searchBookField).enterText('T');
 
-    await $(K.searchBookItem(bookId)).scrollTo(scrollable: $(K.searchBooksList).$(Scrollable));
+    await $(K.searchBookItem(bookId))
+        .scrollTo(scrollable: $(K.searchBooksList).$(Scrollable));
   });
 }
