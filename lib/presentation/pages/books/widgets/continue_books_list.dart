@@ -46,19 +46,24 @@ class _ContinueBooksListState extends ConsumerState<ContinueBooksList> {
                   localizations.bookErrorLoadingContinueBooks,
                 ),
               );
-            } else if (state is FoundBooksState) {
-              return ContinueBooksListBuilder(
-                size: state.books.length,
-                width: widget.width,
-                builder: (index) => ContinueBookItem(
-                  state.books[index],
-                ),
-              );
             } else if (state is EmptyBooksState) {
               return Center(
                 child: AppText.paragraph12(
                   localizations.bookEmptyContinueBooks,
                 ),
+              );
+            } else if (state is FoundBooksState) {
+              return ContinueBooksListBuilder(
+                key: K.continueBooksList,
+                size: state.books.length,
+                width: widget.width,
+                builder: (index) {
+                  final book = state.books[index];
+                  return ContinueBookItem(
+                    book,
+                    key: K.continueBookItem(book.id),
+                  );
+                },
               );
             } else {
               return ContinueBooksListBuilder(

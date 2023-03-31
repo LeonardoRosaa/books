@@ -40,6 +40,7 @@ dev_dependencies:
   faker: ^2.1.0
   alchemist: ^0.6.0
   meta: ^1.8.0
+  patrol: ^1.0.8
 
 flutter:
   generate: true
@@ -57,3 +58,10 @@ flutter:
         - asset: assets/fonts/Rubik-Regular.ttf
         - asset: assets/fonts/Rubik-Bold.ttf
           weight: 700
+
+patrol:
+  app_name: books
+  android:
+    package_name: com.example.books
+  ios:
+    bundle_id: com.example.books

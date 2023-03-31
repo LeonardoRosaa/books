@@ -23,7 +23,7 @@ class ContinueBooksListBuilder extends StatelessWidget {
       separatorBuilder: (context, _) {
         return const AppSpace.semiMedium();
       },
-      itemCount: 4,
+      itemCount: size,
       itemBuilder: (context, index) => SizedBox(
         width: width / 3.5,
         child: builder(index),

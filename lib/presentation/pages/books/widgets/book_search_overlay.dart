@@ -39,50 +39,31 @@ class _BookSearchOverlayState extends ConsumerState<BookSearchOverlay> {
         child: AnimatedContainer(
           duration: _searchAnimationDuration,
           height: isSearching ? context.dimension.height / 1.6 : 50,
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSpacing.semiLarge.value,
+          child: Material(
+            color: theme.colorScheme.background,
+            child: Column(
+              children: [
+                BookSearchField(
+                  onChanged:
+                      ref.read(searchBooksControllerProvider.notifier).search,
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: SearchField(
-                        onChanged: ref
-                            .read(searchBooksControllerProvider.notifier)
-                            .search,
-                      ),
-                    ),
-                    AppIcon.search(
-                      localizations.search,
-                      color: theme.colorScheme.outlineVariant,
-                    )
-                  ],
-                ),
-              ),
-              if (state is FoundSearchBooksState)
-                Expanded(
-                  child: Material(
-                    color: theme.colorScheme.background,
-                    child: ListView.separated(
-                      itemBuilder: (context, index) => SearchBookItem(
-                        state.found[index],
-                      ),
-                      separatorBuilder: (context, index) => const BookDivisor(),
-                      itemCount: state.found.length,
+                if (state is FoundSearchBooksState)
+                  Expanded(
+                    child: SearchBooksList(
+                      key: K.searchBooksList,
+                      books: state.found,
                     ),
                   ),
-                ),
-              if (state is EmptySearchBooksState)
-                Expanded(
-                  child: Center(
-                    child: AppText.paragraph12(
-                      localizations.bookEmptySearch,
+                if (state is EmptySearchBooksState)
+                  Expanded(
+                    child: Center(
+                      child: AppText.paragraph12(
+                        localizations.bookEmptySearch,
+                      ),
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

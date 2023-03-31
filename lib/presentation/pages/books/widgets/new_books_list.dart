@@ -30,17 +30,22 @@ class _NewBooksListState extends ConsumerState<NewBooksList> {
 
     if (state is ErrorBooksState) {
       return SliverMessage(localizations.bookErrorLoadingNewBooks);
+    } else if (state is EmptyBooksState) {
+      return SliverMessage(localizations.bookEmptyNewBooks);
     } else if (state is FoundBooksState) {
       final size = state.books.length;
 
       return NewBooksListBuilder(
+        key: K.newBooksList,
         size: size,
-        builder: (index) => NewBookItem(
-          state.books[index],
-        ),
+        builder: (index) {
+          final book = state.books[index];
+          return NewBookItem(
+            book,
+            key: K.newBookItem(book.id),
+          );
+        },
       );
-    } else if (state is EmptyBooksState) {
-      return SliverMessage(localizations.bookEmptyNewBooks);
     } else {
       const size = 5;
       return NewBooksListBuilder(

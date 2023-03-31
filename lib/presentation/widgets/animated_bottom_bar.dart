@@ -37,6 +37,7 @@ class AppAnimatedBottomBar extends StatelessWidget {
               return GestureDetector(
                 onTap: () => onChanged(index),
                 child: _BottomNavigatorItem(
+                  key: K.bottomNavigationBarItem(index),
                   item: item,
                   isSelected: index == selectedIndex,
                   maxWidth: context.dimension.width / (items.length),
