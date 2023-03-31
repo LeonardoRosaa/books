@@ -81,7 +81,7 @@ class _BottomNavigatorItem extends StatelessWidget {
     return AnimatedContainer(
       width: isSelected ? maxWidth : maxWidth / 2,
       constraints: BoxConstraints(
-        maxWidth: isSelected ? 120 : 40,
+        maxWidth: isSelected ? 100 : 40,
       ),
       height: 40,
       duration: _duration,
