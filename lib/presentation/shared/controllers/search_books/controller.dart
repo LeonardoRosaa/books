@@ -48,6 +48,8 @@ class SearchBooksController extends StateNotifier<SearchBooksState> {
   }
 
   void reset() {
-    state = InitialSearchBooksState(books: state.books);
+    if (state is! InitialSearchBooksState) {
+      state = InitialSearchBooksState(books: state.books);
+    }
   }
 }

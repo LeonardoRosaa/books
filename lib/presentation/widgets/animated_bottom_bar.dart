@@ -1,8 +1,9 @@
 import 'package:books/core/core.dart';
 import 'package:books/presentation/presentation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AppAnimatedBottomBar extends StatelessWidget {
+class AppAnimatedBottomBar extends ConsumerWidget {
   const AppAnimatedBottomBar({
     Key? key,
     this.selectedIndex = 0,
@@ -16,9 +17,14 @@ class AppAnimatedBottomBar extends StatelessWidget {
   final void Function(int) onChanged;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = context.theme;
     final backgroundColor = theme.bottomNavigationBarTheme.backgroundColor!;
+
+    void onTap(int index) {
+      ref.read(searchBooksControllerProvider.notifier).reset();
+      onChanged(index);
+    }
 
     return Container(
       color: backgroundColor,
@@ -34,8 +40,9 @@ class AppAnimatedBottomBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: items.map((item) {
               final index = items.indexOf(item);
+              
               return GestureDetector(
-                onTap: () => onChanged(index),
+                onTap: () => onTap(index),
                 child: _BottomNavigatorItem(
                   key: K.bottomNavigationBarItem(index),
                   item: item,
