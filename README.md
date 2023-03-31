@@ -61,6 +61,14 @@ The [Alchesmit](https://pub.dev/packages/alchemist) package was installed for cr
 
 You can start reading the [Testing the widget’s appearance in Flutter](https://medium.com/@leonardoorosaa16/testing-the-widgets-appearance-in-flutter-b0ba8b4c32ff) if you would like deep dive into the Golden Tests with *Alchesmit* in Flutter.
 
+## Integration tests
+
+Flutter's [integration_test](https://docs.flutter.dev/testing/integration-tests) does a great job but has some features we can't test using the standard API like some *native interactions*. The Books' project uses the [Patrol](https://patrol.leancode.co/getting-started) integration test tool providing an easy way for writing integration tests in Flutter Framework. 
+
+You need to install the [patrol_cli](https://patrol.leancode.co/native/setup#install-patrol_cli) locally before starting with the *Integration Tests* in the Books project.
+
+After installed the `patrol_cli` locally,  you may run the tests executing the `patrol test --target integration_test/integration_test.dart --verbose --no-label` command.
+
 ### Localizations
 
 The Books' project uses the `flutter_localizations` from Flutter SDK for language internationalization. Use the `localization` global variable for accessing the internationalization like the example below:
